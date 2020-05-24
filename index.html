@@ -25,56 +25,56 @@
     <div class="card" id="size">
       <h2 id="size-h">Pizza Size</h2>
     <div class="checkbox">
-      <label><input type="checkbox" value="small">Small</label>
+      <label id="small"><input type="checkbox"  value="small">Small</label>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" value="medium">Medium</label>
+      <label id="medium"><input type="checkbox"  value="medium">Medium</label>
     </div>
     <div class="checkbox ">
-      <label><input type="checkbox" value="large" >Large</label>
+      <label id="large" ><input type="checkbox" value="large" >Large</label>
     </div>
     </div>
     <div class="card" id="crust">
       <h2 id="crust-h">Pizza Crust</h2>
     <div class="checkbox">
-      <label><input type="checkbox" value="crispy">Crispy</label>
+      <label id="crispy"><input type="checkbox" value="crispy">Crispy</label>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" value="stuffed">Stuffed</label>
+      <label id="stuffed"><input type="checkbox" value="stuffed">Stuffed</label>
     </div>
     <div class="checkbox ">
-      <label><input type="checkbox" value="glutenfree" >Gluten-free</label>
+      <label id="glutenfree"><input type="checkbox" value="glutenfree" >Gluten-free</label>
     </div>
     </div>
     <div class="card" id="toppings">
       <h2 id="toppings-h">Pizza Toppings</h2>
     <div class="checkbox">
-      <label><input type="checkbox" value="pepperoni">Pepperoni</label>
+      <label id="pepperoni"><input type="checkbox" value="pepperoni">Pepperoni</label>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" value="sausage">Sausage</label>
+      <label id="sausage"><input type="checkbox" value="sausage">Sausage</label>
     </div>
     <div class="checkbox ">
-      <label><input type="checkbox" value="mushroom" >Mushroom</label>
+      <label id="mushroom"><input type="checkbox" value="mushroom" >Mushroom</label>
     </div>
     </div>
     <div class="card">
       <h2 id="delivery">Service</h2>
     <div class="radio">
-      <label><input type="radio"  id="yesdeliver" name="optradio" value="yes">Delivery</label>
+      <label id="yes"><input type="radio"  id="yesdeliver" name="optradio" value="yes">Delivery</label>
     </div>
     <div class="radio">
-      <label><input type="radio" id="no" name="optradio" value="no" checked>Take Away</label>
+      <label id="no"><input type="radio" id="no" name="optradio" value="no" checked>Take Away</label>
     </div>
     <div class="radio">
-      <label><input type="radio" id="no" name="optradio" value="no">On location</label>
+      <label id="no"><input type="radio" id="no" name="optradio" value="no">On location</label>
     </div>
     </div>
    
     <div class="card" id="btn3">
       <h2 id="location">Type location of delivery</h2>
       <div class="form-group">
-        <input type="text" id="location2" value="" ></p>
+        <input type="text" id="location2" value="" id="locate"></p>
         <button id="btn1">Confirm Location of Delivery</button>
     </div>
     </div><br>
@@ -84,11 +84,7 @@
         <input type="number" class="form-control" id="quantity">
       </div>
     </div>
-    <div class="card">
-      <div class="form-group">
-        <textarea class="form-control" rows="5" id="checkout"></textarea>
-      </div>
-    </div>
+  
     <button type="submit" class="btn btn-default" onclick="checkout()">Checkout</button>
     </form>
 </body>
