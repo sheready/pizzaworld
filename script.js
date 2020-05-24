@@ -9,3 +9,11 @@ $(document).ready(function(){
 
  });
 });
+$(document).ready(function(){
+  $("#no").click(function(){
+    $("#btn3").hide();
+  });
+  $("#yesdeliver").click(function(){
+    $("#btn3").show();
+  });
+});
