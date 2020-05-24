@@ -8,6 +8,7 @@
     <script src="jquery-3.5.1.js"></script>
     <script src="bootstrap-4.4.1-dist/js/bootstrap.min.js" type="text/css" rel="stylesheet"></script>
     <script src="bootstrap-4.4.1-dist/js/bootstrap.js" type="text/css" rel="stylesheet"></script>
+    
     <script src="script.js"></script>
     <link href="style.css" type="text/css" rel="stylesheet">
 
@@ -20,7 +21,7 @@
         <p class="card-text"> </p>
       </div>
     </div>
-    <form>
+    <form id="form_data">
     <div class="card" id="size">
       <h2 id="size-h">Pizza Size</h2>
     <div class="checkbox">
@@ -78,8 +79,9 @@
     <div class="card">
       <h2 id="location">Type location of delivery</h2>
       <div class="form-group">
-        <input type="number" class="form-control" id="location">
-      </div>
+        <p><input type="text" id="location2" value=""></p>
+        <button id="btn1">Confirm Location of Delivery</button>
+    </div>
     </div>
     
     <div class="card">
@@ -87,7 +89,7 @@
         <textarea class="form-control" rows="5" id="checkout"></textarea>
       </div>
     </div>
-    <button type="submit" class="btn btn-default">Checkout</button>
+    <button type="submit" class="btn btn-default" onclick="checkout()">Checkout</button>
     </form>
 </body>
 </html>
