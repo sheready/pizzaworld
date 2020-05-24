@@ -18,35 +18,78 @@ $(document).ready(function(){
   });
 });
 $(document).ready(function(){
+  var price ={
+    small :600,
+    medium:1200,
+    large : 1500
+  };
+  var crust = {
+    crispy : 200,
+    stuffed : 400,
+    glutenfree :800
+  };
+  var toppings = {
+       pepperoni :function(toppings2){
+         if (price = 600){
+           return 100;
+         }
+         else if (price = 1200){
+           return 150;
+         }
+         else if (price = 1500) {
+           return 250;
+         }
+       },
+       sausage :function(toppings3){
+        if (price = 600){
+          return 150;
+        }
+        else if (price = 1200){
+          return 350;
+        }
+        else if(price = 1500){
+          return 450;
+        }
+      },
+      mushroom :function(toppings4){
+        if (price = 600){
+          return 200;
+        }
+        else if (price = 1200){
+          return 550;
+        }
+        else if(price = 1500){
+          return 850;
+        }
+      }
+      };
+  
   $(".checkbox").click(function(){
-    $("#small").append(" <b>Ksh:200</b>.");
+    $("#small").append(" <b>Ksh: </b>" + price.small)
     });  
   $(".checkbox").click(function(){
-    $("#medium").append(" <b>Ksh:700</b>.");
+    $("#medium").append(" <b>Ksh: </b>" + price.medium);
     
   });  
   $(".checkbox").click(function(){
-    $("#large").append(" <b>Ksh:1200</b>.");
+    $("#large").append(" <b>Ksh: </b>" + price.large);
  });  
  $(".checkbox").click(function(){
-  $("#crispy").append(" <b>Ksh:200</b>.");
+  $("#crispy").append(" <b>Ksh: </b>" + crust.crispy);
 });
 $(".checkbox").click(function(){
-  $("#stuffed").append(" <b>Ksh:400</b>.");
+  $("#stuffed").append(" <b>Ksh: </b>" + crust.stuffed);
 });
 $(".checkbox").click(function(){
-  $("#glutenfree").append(" <b>Ksh:800</b>.");
+  $("#glutenfree").append(" <b>Ksh: </b>" + crust.glutenfree);
 });
-$(".checkbox").click(function(){
-  $("#pepperoni").append(" <b>Ksh:200</b>.");
+$(".checkbox").click(function(toppings2){
+  $("#pepperoni").append(" <b>Ksh: </b>" + toppings.pepperoni());
 });
-$(".checkbox").click(function(){
-  $("#sausage").append(" <b>Ksh:600</b>.");
+$(".checkbox").click(function(toppings3){
+  $("#pepperoni").append(" <b>Ksh: </b>" + toppings.sausage());
 });
-$(".checkbox").click(function(){
-  $("#mushroom").append(" <b>Ksh:800</b>.");
+$(".checkbox").click(function(toppings4){
+  $("#pepperoni").append(" <b>Ksh: </b>" + toppings.mushroom());
 });
-
-
-  
 });
