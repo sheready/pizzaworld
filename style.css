@@ -16,7 +16,24 @@
 }
 .mySlides {
     display:none;
+    height: 550px;
 }
+.mySlides1{
+    height: 550px;
+}
+
 .slide1{
     float:right;
 }
+.slide2{
+    float: left;
+}
+.formdata{
+   
+    
+    background-color: yellow;
+    height: 500px;
+    width: 50%;
+    float: right;
+}
+
