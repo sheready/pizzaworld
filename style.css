@@ -24,16 +24,42 @@
 
 .slide1{
     float:right;
+    width: 50%;
 }
 .slide2{
     float: left;
-}
-.formdata{
-   
-    
-    background-color: yellow;
-    height: 500px;
     width: 50%;
-    float: right;
+}
+#imgcontainer{
+    height:570px;
+}
+#formcontainer{
+    background-color: yellow;
+    width: 50%; 
+    height: 550px;
+   
+}
+#myForm{
+    width: 100%;
+    font-size: 30px;
+}
+#formh{
+    text-align: center;
+    font-size: 30px;
+}
+
+#headerh1{
+    font-size: 70px;
+    padding-top: 50px;
+}
+#headerp{
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 100px;
+    font-size: 30px;
+}
+.page-footer{
+    width: 100%;
+    background-color: black;
 }
 
