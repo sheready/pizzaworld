@@ -1,95 +1,62 @@
-$(document).ready(function(){
-  function formRefresh(){
-    document.getElementById("form_data").reset();
-  }
-});
-$(document).ready(function(){
- $('#btn1').click(function() {
-  alert("Your location is " + $("#location2").val());
+function Order (type, size, crust, topping) {
+  this.type = type;
+  this.size = size;
+  this.crust = crust;
+  this.topping = topping;
+}
 
- });
-});
-$(document).ready(function(){
-  $("#no").click(function(){
-    $("#btn3").hide();
-  });
-  $("#yesdeliver").click(function(){
-    $("#btn3").show();
-  });
-});
-$(document).ready(function(){
-  var price ={
-    small :600,
-    medium:1200,
-    large : 1500
-  };
-  var crust = {
-    crispy : 200,
-    stuffed : 400,
-    glutenfree :800
-  };
-  var toppings = {
-       pepperoni :function(toppings2){
-         if (price = 600){
-           return 100;
-         }
-         else if (price = 1200){
-           return 150;
-         }
-         else if (price = 1500) {
-           return 250;
-         }
-       },
-       sausage :function(toppings3){
-        if (price = 600){
-          return 150;
-        }
-        else if (price = 1200){
-          return 350;
-        }
-        else if(price = 1500){
-          return 450;
-        }
-      },
-      mushroom :function(toppings4){
-        if (price = 600){
-          return 200;
-        }
-        else if (price = 1200){
-          return 550;
-        }
-        else if(price = 1500){
-          return 850;
-        }
+Order.prototype.fullOrder = function () {
+  return this.type + " with the crust of " + this.crust + " and " + this.topping + " as topping.";
+};
+
+function Total(price, quantity, delivery) {
+  this.price = price;
+  this.quantity = quantity;
+  this.delivery = delivery;
+}
+
+Total.prototype.finalTotal = function () {
+  return this.price * this.quantity + this.delivery;
+};
+
+
+var sizePrice = [1000, 800, 600]
+var deliverPrices = [0, 200];
+//user interface logic
+$(document).ready(function () {
+  $('form#myForm').submit(function (event) {
+      event.preventDefault();
+      var pizzaType = $('#type').val();
+
+      var pizzaSize = parseInt($('#size').val());
+      var pizzaCrust = $('#crust').val();
+
+      var pizzaTop = $('#top').val();
+
+      var pizzaQty = parseInt($('#qty').val());
+
+      var pizzaPick = parseInt($('#pick').val());
+
+
+      var price = sizePrice[pizzaSize - 1];
+
+
+      var DeliveryCost = deliverPrices[pizzaPick - 1];
+
+
+
+      newOrder = new Order(pizzaType, pizzaSize, pizzaCrust, pizzaTop);
+      newTotal = new Total(price, pizzaQty, DeliveryCost);
+      if (pizzaPick===1){
+      alert("Your order is: " + newOrder.fullOrder() + ". Continue to see your total bill");
+      alert("Your bill is: " + newTotal.finalTotal());
+      }else{
+          if(pizzaPick===2){
+              prompt("Enter the location of your delivery.");
+              alert("Your order has been received and it will be delivered. Continue to see  the details of your order");
+              alert("Your order is : " + newOrder.fullOrder() + ". Click okay to see your total bill");
+              alert("Your bill is : " + newTotal.finalTotal());
+          }
       }
-      };
-  
-  $(".checkbox").click(function(){
-    $("#small").append(" <b>Ksh: </b>" + price.small)
-    });  
-  $(".checkbox").click(function(){
-    $("#medium").append(" <b>Ksh: </b>" + price.medium);
-    
-  });  
-  $(".checkbox").click(function(){
-    $("#large").append(" <b>Ksh: </b>" + price.large);
- });  
- $(".checkbox").click(function(){
-  $("#crispy").append(" <b>Ksh: </b>" + crust.crispy);
-});
-$(".checkbox").click(function(){
-  $("#stuffed").append(" <b>Ksh: </b>" + crust.stuffed);
-});
-$(".checkbox").click(function(){
-  $("#glutenfree").append(" <b>Ksh: </b>" + crust.glutenfree);
-});
-$(".checkbox").click(function(toppings2){
-  $("#pepperoni").append(" <b>Ksh: </b>" + toppings.pepperoni());
-});
-$(".checkbox").click(function(toppings3){
-  $("#pepperoni").append(" <b>Ksh: </b>" + toppings.sausage());
-});
-$(".checkbox").click(function(toppings4){
-  $("#pepperoni").append(" <b>Ksh: </b>" + toppings.mushroom());
-});
-});
+    })
+  });
