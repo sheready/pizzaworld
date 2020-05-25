@@ -14,16 +14,9 @@
     
     
 }
-
-.card-title{
-   text-align: center;
-   
+.mySlides {
+    display:none;
 }
-#size{
-    display: block;
-    padding-top: 70px;
-  
-}
-#btn3{
-    display: none;
+.slide1{
+    float:right;
 }
